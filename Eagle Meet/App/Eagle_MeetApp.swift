@@ -6,16 +6,14 @@
 //
 
 import SwiftUI
-import CoreData
+import SwiftData
 
 @main
 struct Eagle_MeetApp: App {
-    let persistenceController = PersistenceController.shared
-
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            NavBar()
         }
+        .modelContainer(for: [User.self, Event.self])
     }
 }
