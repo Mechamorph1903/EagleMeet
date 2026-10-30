@@ -16,10 +16,14 @@ final class Event {
     var date: Date //both date and time will be stored
     var location: String
     var details: String
-    var image: String?
+    @Attribute(.externalStorage) var imageData: Data?
     var organizer: User
+    var attendees: [User]
+    var participantsLimit: Int
+    var isCancelled: Bool
     
-    init(title: String, category: String, date: Date, location: String, organizer: User, details: String){
+    
+    init(title: String, category: String, date: Date, location: String, organizer: User, details: String, participantsLimit: Int, imageData: Data? = nil){
         self.id = UUID()
         self.title = title
         self.category = category
@@ -27,7 +31,11 @@ final class Event {
         self.location = location
         self.organizer = organizer
         self.details = details
-        self.image = nil
+        self.imageData = imageData
+        self.attendees = []
+        self.participantsLimit = participantsLimit
+        self.isCancelled = false
+        
     }
     
     

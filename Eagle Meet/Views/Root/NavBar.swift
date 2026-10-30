@@ -38,7 +38,7 @@ struct NavBar: View {
                     Label("My Plans", systemImage: "calendar")
                 }
                 .tag(2)
-            }
+            }.tint(.yellow)
         }
 }
 
