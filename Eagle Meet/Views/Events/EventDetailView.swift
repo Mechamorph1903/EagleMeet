@@ -6,3 +6,12 @@
 //
 
 import Foundation
+import SwiftUI
+
+struct EventDetailView: View {
+    let event: Event
+    
+    var body: some View {
+        Text("Hello World")
+    }
+}
